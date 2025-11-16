@@ -427,8 +427,10 @@ bind -n End send Escape "OF"
 unbind Enter
 bind Enter new-window -c "#{pane_current_path}"
 
-bind -r < swap-window -t -1\; select-window -t -1
-bind -r > swap-window -t +1\; select-window -t +1
+bind -r p previous-window
+bind -r P swap-window -t -1 \; select-window -t -1
+bind -r n next-window
+bind -r N swap-window -t +1 \; select-window -t +1
 
 # -- tpm -----------------------------------------------------------------------
 
