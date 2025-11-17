@@ -415,14 +415,12 @@ set -g mode-keys vi
 # display a message after toggling mouse support
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 
-# move status line to top
-#set -g status-position top
-
+set -g default-terminal "tmux-256color" #!important
 
 # Fix Home and End keys
 # Use ~/.inputrc fix from Arch wiki: https://wiki.archlinux.org/title/Home_and_End_keys_not_working
-bind -n Home send Escape "OH"
-bind -n End send Escape "OF"
+#bind -n Home send Escape "OH"
+#bind -n End send Escape "OF"
 
 unbind Enter
 bind Enter new-window -c "#{pane_current_path}"
